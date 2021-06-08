@@ -166,7 +166,7 @@
           </div>
         </div>
       </li>
-      <li class="nav-item">
+      {{-- <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#Report"
           aria-expanded="true" aria-controls="Report">
           <i class="fa fa-check-circle"></i>
@@ -178,7 +178,7 @@
             <router-link class="collapse-item" to="/salary/pay">Add Customer</router-link>
           </div>
         </div>
-      </li>
+      </li> --}}
 
 
       <hr class="sidebar-divider">
