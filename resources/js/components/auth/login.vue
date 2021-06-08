@@ -69,6 +69,8 @@ errors:{}
  },
  methods: {
      login(){
+
+
          axios.post('/api/auth/login',this.form)
          .then(res => {
            User.responseAfterLogin(res);
@@ -78,13 +80,14 @@ errors:{}
             })
            this.$router.push({name: 'dashboard'})
          })
-         .catch(err => this.errors=err.response.data.errors)
-         .catch(
-             Toast.fire({
+         .catch(err => {
+   this.errors=err.response.data.errors
+    Toast.fire({
             icon: 'error',
             title: 'Invalid Email OR Password'
             })
-         )
+})
+
 }
  },
 }
