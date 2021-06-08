@@ -24,6 +24,12 @@ public function addcart(Request $request, $id){
 
     $check= DB::table('pos')->where('pro_id',$id)->first();
 
+$check_qty=$product->product_qty;
+if($check_qty<1){
+return response()->json('Stock Out');
+}else{
+
+
     if($check){
  DB::table('pos')->where('pro_id',$id)->increment('pro_qty');
 
@@ -33,6 +39,7 @@ public function addcart(Request $request, $id){
     DB::table('pos')->where('pro_id',$id)->update([
         'sub_total' =>$subtotal
     ]);
+    return response()->json('Cart Updated');
 
     }else{
         $data=array();
@@ -42,6 +49,9 @@ public function addcart(Request $request, $id){
         $data['pro_price']=$product->selling_price;
         $data['sub_total']=$product->selling_price;
        DB::table('pos')->insert($data);
+return response()->json('Cart Added');
+
+    }
     }
 
 }

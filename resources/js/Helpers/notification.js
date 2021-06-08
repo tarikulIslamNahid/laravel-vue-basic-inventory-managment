@@ -8,6 +8,7 @@ class notification{
             timeout:1200,
         }).show();
     }
+    
     success(){
         new Noty({
             type: 'success',

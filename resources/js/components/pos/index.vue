@@ -250,8 +250,8 @@ this.pay_by='';
 },
             AddToCart(id){
                 axios.get('/api/addCart/'+id)
-            .then(() => {
-                    notification.cartSuccess();
+            .then(res => {
+            notification.customNoti(res.data);
              this.getCarts();
 
             })

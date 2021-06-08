@@ -4761,8 +4761,8 @@ __webpack_require__.r(__webpack_exports__);
     AddToCart: function AddToCart(id) {
       var _this3 = this;
 
-      axios.get('/api/addCart/' + id).then(function () {
-        notification.cartSuccess();
+      axios.get('/api/addCart/' + id).then(function (res) {
+        notification.customNoti(res.data);
 
         _this3.getCarts();
       });
